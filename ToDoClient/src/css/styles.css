@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.task{
+    border: gray 4px solid;
+    margin: 4px;
+    width: 90vw;
+    max-width: 350px;
+}
+.taskCompleted, .taskDelete{
+    display: inline-block;
+}
+.taskName{
+    background-color: lightgray;
+}
+#new label{
+    display: inline-block;
+    width: 120px;
+}
+#new input, #new textarea{
+    width:220px;
+}
+.complete{
+    background-color: green;
+}

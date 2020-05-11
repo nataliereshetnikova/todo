@@ -1,0 +1,18 @@
+{{#each this}}
+    <div class="task{{#if isComplete}} complete{{/if}}" id="task-{{id}}">
+    <div class="taskName">{{name}}</div>
+    <div class="taskCompleted">
+        <label for="completed">Completed</label>
+        <input {{#if isComplete}}checked{{/if}} onclick="" name="completed" type="checkbox" class="complete-task" data-id="{{id}}"/>
+        {{!-- <input name="completed" type="checkbox" class="complete-task" data-id="{{id}}"/> --}}
+    </div>
+
+    <div class="taskDelete">
+        <button class="delete-task" data-id="{{id}}">Delete</button>
+    </div>
+    {{#if description}}
+        <div class="taskDescription">{{description}}</div>
+    {{/if}}
+
+    </div>
+{{/each}}
