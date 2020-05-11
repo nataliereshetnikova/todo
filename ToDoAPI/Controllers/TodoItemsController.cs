@@ -24,7 +24,10 @@ namespace ToDoAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ToDoItem>>> GetToDoItems()
         {
-            return await _context.ToDoItems.ToListAsync();
+            IQueryable<ToDoItem> toDoItemsQuery = 
+            (from tdTable in _context.ToDoItems orderby tdTable.Deadline select tdTable);
+            // return await _context.ToDoItems.ToListAsync();
+            return await toDoItemsQuery.AsNoTracking().ToListAsync();
         }
 
         // GET: api/TodoItems/5
